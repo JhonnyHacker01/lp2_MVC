@@ -21,8 +21,17 @@ class UsuarioController{
     }
 }
 
-
     public function mostrar(){
         $usuario = new Usuario();
         return $usuario->mostrar();
+    }
+
+    public function eliminar(int $id){
+        $usuario = new Usuario();
+        $resultado = $usuario->eliminar($id);
+        if ($resultado!=0) {
+            header("Location: verUsuarios.php");
+        } else {
+            return "Error: no se eliminó el usuario";
+        }
     }

@@ -39,4 +39,12 @@ class Usuario{
         $conn->cerrar();
         return $resultado;
     }
+    public function eliminar($id){
+        $conn = new Conn();
+        $conexion = $conn->conectar();
+        $sql = "DELETE * FROM usuario WHERE id=$id";
+        $resultado = $conexion->query($sql);
+        $conn->cerrar();
+        return $resultado;
+    }
 }

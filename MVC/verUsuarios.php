@@ -3,7 +3,8 @@
 require_once "controladores/UsuarioController.php";
 
 $uc = new UsuarioController();
-$usuarios = $usuarioController->mostrar();
+$usuarios = $uc->mostrar();
+
 ?>
 <table border="1">
     <thead>
@@ -11,17 +12,21 @@ $usuarios = $usuarioController->mostrar();
         <th>Nombres</th>
         <th>Apellidos</th>
         <th>Tipo</th>
+        <th>&nbsp</th>
     </tr>
     </thead>
     <tbody>
 <?php
 foreach ($usuarios as $usuario)
-
-    echo "<tr>"
+    echo "<tr>
     <td>".$usuario['nombres']."</td>
     <td>".$usuario['apellidos']."</td>
     <td>".$usuario['tipo']."</td>
-    </tr>";                   
+    <td><a href='eliminarUsuario.php?id=".$usuario['id_usuario']."'>Eliminar</a></td>
+    </tr>";             
+
+}
+?>
 
 echo "</prex>";
 
