@@ -1,2 +1,1 @@
-# lp2_MVC
-clase de omar
+PURA MAMADAS XD
