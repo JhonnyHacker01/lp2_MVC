@@ -29,4 +29,14 @@ class Usuario{
         $conn->cerrar();
         return $resultado;
     }
+    
+    public function guardar($username, $password, $nombres, $apellidos, $tipo, $escuela, $email){
+        $conn = new Conn();
+        $conexion = $conn->conectar();
+        $sql = "INSERT * FROM usuario(username, password, nombres, apellidos, tipo, id_escuela, email) 
+        VALUES ('$username', '$password', '$nombres', '$apellidos', '$tipo', '$escuela', '$email')";
+        $resultado = $conexion->query($sql);
+        $conn->cerrar();
+        return $resultado;
+    }
 }
