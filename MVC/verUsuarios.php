@@ -17,7 +17,7 @@ $usuarios = $uc->mostrar();
     </thead>
     <tbody>
 <?php
-foreach ($usuarios as $usuario)
+foreach ($usuarios as $usuario){
     echo "<tr>
     <td>".$usuario['nombres']."</td>
     <td>".$usuario['apellidos']."</td>
@@ -28,7 +28,6 @@ foreach ($usuarios as $usuario)
 }
 ?>
 
-echo "</prex>";
 
 </tbody>
 </table>
